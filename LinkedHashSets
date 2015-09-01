@@ -72,6 +72,21 @@ en java
 		return (estaEnCelular)||(estaEnWeb)&&(!estaEnJava);
 	}
 	
+	
+	public boolean javaEsSubconjuntoDeWeb (String nombre){ //Indicar SI o NO el conjunto de desarrolladores Java es un subconjunto de Desarrolladores Web.
+		int contador =0;
+		int tamano = desarrolladoresJava.size();
+		TreeSet<String> temporal = desarrolladoresJava;
+		while (contador<tamano){
+			boolean loContiene = desarrolladoresWeb.contains(temporal.pollLast());
+			if (!loContiene){
+				return false;
+			}
+			contador ++;
+		}
+		return true;
+	}
+	
 	public String conjuntoMayor(HashSet<> desarrolladoresJava, HashSet<> desarrolladoresWeb, HashSet<> desarrolladoresCelular){ //El  conjunto que  tenga  la  cantidad  más  grande  de  desarrolladores
 		int desarrolladoresEnJava = desarrolladoresJava.size();
 		int desarrolladoresEnWeb = desarrolladoresWeb.size();
