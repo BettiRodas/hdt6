@@ -84,7 +84,7 @@ en java
 			return mayor;	
 		}
 		
-		if(((desarrolladoresEnJWeb) > (desarrolladoresEnJava)) && ((desarrolladoresEnWeb) < (desarrolladoresEnCelular))){
+		if(((desarrolladoresEnWeb) > (desarrolladoresEnJava)) && ((desarrolladoresEnWeb) < (desarrolladoresEnCelular))){
 			mayor = desarrolladoresEnWeb;
 			return mayor;
 		}
