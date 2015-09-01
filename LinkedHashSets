@@ -76,7 +76,7 @@ en java
 	public boolean javaEsSubconjuntoDeWeb (String nombre){ //Indicar SI o NO el conjunto de desarrolladores Java es un subconjunto de Desarrolladores Web.
 		int contador =0;
 		int tamano = desarrolladoresJava.size();
-		TreeSet<String> temporal = desarrolladoresJava;
+		LinkedHashSet<String> temporal = desarrolladoresJava;
 		while (contador<tamano){
 			boolean loContiene = desarrolladoresWeb.contains(temporal.pollLast());
 			if (!loContiene){
