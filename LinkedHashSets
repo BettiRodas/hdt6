@@ -18,55 +18,78 @@ public class LinkedHashSets {
            
     public LinkedHashSets(){
        //se crean los objetos LinkedHashSet
-        desarrolladoresJava= new LinkedHashSet<String>;
-        desarrolladoresWeb= new LinkedHashSet<String>;
-        desarrolladoresCelular= new LinkedHashSet<String>;
+        desarrolladoresJava= new LinkedHashSet<>;
+        desarrolladoresWeb= new LinkedHashSet<>;
+        desarrolladoresCelular= new LinkedHashSet<>;
     }   
     
-	public void agregar(String nombre, boolean esWeb, boolean esJava, boolean esCelular){
-		for (int i = 0; i<3; i++){
-			if ((esWeb) && (i==0)){
-				desarrolladoresWeb.add(nombre);
+    //Se agrega a el hash el nombre del desarrollador a el hash correspondiente
+    public void agregar(String nombre, boolean esWeb, boolean esJava, boolean esCelular){
+		for (int i = 0; i<3; i++){ //Se recorre cada hash
+			if ((esWeb) && (i==0)){ //Si es desarrollador web
+				desarrolladoresWeb.add(nombre); //Se agrega al hash correspondiente
 			}
-			if ((esJava) && (i==1)){
-				desarrolladoresJava.add(nombre);
+			if ((esJava) && (i==1)){ //Si el desarrollador es de java
+				desarrolladoresJava.add(nombre); //Se agrega al hash correspondiente
 			}
-			if ((esCelular) && (i==2)){
-				desarrolladoresCelular.add(nombre);
+			if ((esCelular) && (i==2)){ //Si el desarrollador es de celulares
+				desarrolladoresCelular.add(nombre); //Se agrega al hash correspondiente
 			}
 		}
 	}
 
-	public boolean compararTresConjuntos (String nombre){
+	public boolean compararTresConjuntos (String nombre){ //Desarrolladores con experiencia en Java, web y celulares.
+		boolean estaEnWeb = desarrolladoresWeb.contains(nombre); //Se revisa si nombre ingresado esta en el hash
+		boolean estaEnJava = desarrolladoresJava.contains(nombre); //Se revisa si nombre ingresado esta en el hash
+		boolean estaEnCelular = desarrolladoresCelular.contains(nombre); //Se revisa si nombre ingresado esta en el hash
+
+		return (estaEnWeb)&&(estaEnJava)&&(estaEnCelular); //si esta en los tres grupos se devuelve un true
+	}
+
+	public boolean compararJavaSinWeb (String nombre){ //Desarrolladores con experiencia en Java pero que no tengan experiencia en web
 		boolean estaEnWeb = desarrolladoresWeb.contains(nombre);
 		boolean estaEnJava = desarrolladoresJava.contains(nombre);
 		boolean estaEnCelular = desarrolladoresCelular.contains(nombre);
 
-		if ((estaEnWeb)&&(estaEnJava)&&(estaEnCelular)){
-			return true;
-		}
-		return false;
+		return (estaEnJava)&&(!estaEnWeb);
 	}
 
-	public boolean compararJavaSinWeb (String nombre){
+	public boolean compararWebYCelSinJava (String nombre){ //Desarrolladores con experiencia en Web y Celulares pero que no tengan experiencia 
+en java
 		boolean estaEnWeb = desarrolladoresWeb.contains(nombre);
 		boolean estaEnJava = desarrolladoresJava.contains(nombre);
 		boolean estaEnCelular = desarrolladoresCelular.contains(nombre);
 
-		if ((estaEnJava)&&(estaEnWeb)!){
-			return true;
-		}
-		return false;
+		return (estaEnCelular)&&(estaEnWeb)&&(!estaEnJava);
 	}
-
-	public boolean compararWebYCelSinJava (String nombre){
+	
+	public boolean compararWebOCelSinJava(String nombre){ //Desarrolladores con experiencia en Web o Celulares pero que no tengan experiencia 
+en java
 		boolean estaEnWeb = desarrolladoresWeb.contains(nombre);
 		boolean estaEnJava = desarrolladoresJava.contains(nombre);
 		boolean estaEnCelular = desarrolladoresCelular.contains(nombre);
 
-		if ((estaEnCelular)&&(estaEnWeb)&&(estaEnJava)!){
-			return true;
-		}
-		return false;
+		return (estaEnCelular)||(estaEnWeb)&&(!estaEnJava);
 	}
-}
+	
+	public String conjuntoMayor(HashSet<> desarrolladoresJava, HashSet<> desarrolladoresWeb, HashSet<> desarrolladoresCelular){ //El  conjunto que  tenga  la  cantidad  más  grande  de  desarrolladores
+		int desarrolladoresEnJava = desarrolladoresJava.size();
+		int desarrolladoresEnWeb = desarrolladoresWeb.size();
+		int desarrolladoresEnCelular = desarrolladoresCelular.size();
+		String mayor= "";
+		
+		if(((desarrolladoresEnJava) > (desarrolladoresEnWeb)) && ((desarrolladoresEnWeb) > (desarrolladoresEnCelular))){
+			mayor = desarrolladoresEnJava;
+			return mayor;	
+		}
+		
+		if(((desarrolladoresEnWeb) > (desarrolladoresEnJava)) && ((desarrolladoresEnWeb) < (desarrolladoresEnCelular))){
+			mayor = desarrolladoresEnWeb;
+			return mayor;
+		}
+				
+		if(((desarrolladoresEnCelular) > (desarrolladoresEnWeb)) && ((desarrolladoresEnCelular) < (desarrolladoresEnJava)){
+			mayor = desarrolladoresEnCelular;
+			return mayor;	
+		}
+	}
