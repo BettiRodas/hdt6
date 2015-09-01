@@ -53,6 +53,57 @@ public class main<T> {
                 }
                 
              }
+             System.out.println();
+             System.out.println("Desarrolladores con experiencia en Java pero que no tengan experiencia en web"); 
+             for (int i=0;i<=contador;i++){
+                String desarollo = desarrolladores[i];
+                boolean seCumple= desarollas.compararJavaSinWeb(desarollo);
+                if seCumple{
+                    System.out.println(desarollo); 
+                }
+                
+             }
+             System.out.println();
+             System.out.println("Desarrolladores con experiencia en Web y Celular pero sin experiencia en java."); 
+             for (int i=0;i<=contador;i++){
+                String desarollo = desarrolladores[i];
+                boolean seCumple= desarollas.compararWebYCelSinJava(desarollo);
+                if seCumple{
+                    System.out.println(desarollo); 
+                }
+                
+             }
+             System.out.println();
+             System.out.println("Desarrolladores con experiencia en Web o Celular pero sin experiencia en java."); 
+             for (int i=0;i<=contador;i++){
+                String desarollo = desarrolladores[i];
+                boolean seCumple= desarollas.compararWebOCelSinJava(desarollo);
+                if seCumple{
+                    System.out.println(desarollo); 
+                }
+                
+             }
+             System.out.println();
+             boolean conjunto = desarollas.javaEsSubconjuntoDeWeb();
+             if (conjunto){
+                System.out.println("Los desarroladores de java son un subconjunto de los desarrolladores de web."); 
+             }
+             else{
+                System.out.println("Los desarroladores de java no son un subconjunto de los desarrolladores de web."); 
+             }
+             System.out.println();
+             int mayor =conjuntoMayor();
+             if (mayor ==0){
+                System.out.println("El conjunto mas grande es el de desarrolladores de Java"); 
+             }
+              if (mayor ==1){
+                System.out.println("El conjunto mas grande es el de desarrolladores de Web"); 
+             }
+              if (mayor ==2){
+                System.out.println("El conjunto mas grande es el de desarrolladores de Celulares"); 
+             }
+             }
+
         
         }
             
@@ -72,5 +123,8 @@ public class main<T> {
             return (T) new LinkedHashSets();
         }
     }*/
+    
+}
+
     
 }
