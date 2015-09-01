@@ -54,7 +54,7 @@ public class DesarolladoresTreeSet {
 		return (estaEnCelular)||(estaEnWeb)&&(!estaEnJava);
 	}
 
-	public boolean javaEsSubconjuntoDeWeb (String nombre){
+	public boolean javaEsSubconjuntoDeWeb (){
 		int contador =0;
 		int tamano = desarrolladoresJava.size();
 		TreeSet<String> temporal = desarrolladoresJava;
@@ -69,7 +69,7 @@ public class DesarolladoresTreeSet {
 	}
 
 
-	public int conjuntoMayo (String nombre){
+	public int conjuntoMayor (String nombre){
 		int tamanoJava = desarrolladoresJava.size();
 		int tamanoWeb = desarrolladoresWeb.size();
 		int tamanoCelular = desarrolladoresCelular.size();
