@@ -4,8 +4,8 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class DesarolladoresTreeSet{
-	TreeSet<String> desarrolladoresWeb, desarrolladoresJava, desarrolladoresCelular;
+public class DesarolladoresTreeSet {
+    TreeSet<String> desarrolladoresWeb, desarrolladoresJava, desarrolladoresCelular;
 
 	public DesarolladoresTreeSet(){
 		 desarrolladoresWeb = new TreeSet<String>();
@@ -43,7 +43,7 @@ public class DesarolladoresTreeSet{
 		boolean estaEnJava = desarrolladoresJava.contains(nombre);
 		boolean estaEnCelular = desarrolladoresCelular.contains(nombre);
 
-		if ((estaEnJava)&&(estaEnWeb)!){
+		if ((estaEnJava)&!(estaEnWeb)){
 			return true;
 		}
 		return false;
@@ -54,11 +54,6 @@ public class DesarolladoresTreeSet{
 		boolean estaEnJava = desarrolladoresJava.contains(nombre);
 		boolean estaEnCelular = desarrolladoresCelular.contains(nombre);
 
-		if ((estaEnCelular)&&(estaEnWeb)&&(estaEnJava)!){
-			return true;
-		}
-		return false;
+		return (estaEnCelular)&&(estaEnWeb)&!(estaEnJava);
 	}
-
-
 }
