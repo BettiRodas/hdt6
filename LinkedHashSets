@@ -1,0 +1,72 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package hashs;
+
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+/**
+ *
+ * @author Betti
+ */
+public class LinkedHashSets {
+    LinkedHashSet<String> desarrolladoresJava, desarrolladoresWeb, desarrolladoresCelular;
+           
+    public LinkedHashSets(){
+       //se crean los objetos LinkedHashSet
+        desarrolladoresJava= new LinkedHashSet<String>;
+        desarrolladoresWeb= new LinkedHashSet<String>;
+        desarrolladoresCelular= new LinkedHashSet<String>;
+    }   
+    
+	public void agregar(String nombre, boolean esWeb, boolean esJava, boolean esCelular){
+		for (int i = 0; i<3; i++){
+			if ((esWeb) && (i==0)){
+				desarrolladoresWeb.add(nombre);
+			}
+			if ((esJava) && (i==1)){
+				desarrolladoresJava.add(nombre);
+			}
+			if ((esCelular) && (i==2)){
+				desarrolladoresCelular.add(nombre);
+			}
+		}
+	}
+
+	public boolean compararTresConjuntos (String nombre){
+		boolean estaEnWeb = desarrolladoresWeb.contains(nombre);
+		boolean estaEnJava = desarrolladoresJava.contains(nombre);
+		boolean estaEnCelular = desarrolladoresCelular.contains(nombre);
+
+		if ((estaEnWeb)&&(estaEnJava)&&(estaEnCelular)){
+			return true;
+		}
+		return false;
+	}
+
+	public boolean compararJavaSinWeb (String nombre){
+		boolean estaEnWeb = desarrolladoresWeb.contains(nombre);
+		boolean estaEnJava = desarrolladoresJava.contains(nombre);
+		boolean estaEnCelular = desarrolladoresCelular.contains(nombre);
+
+		if ((estaEnJava)&&(estaEnWeb)!){
+			return true;
+		}
+		return false;
+	}
+
+	public boolean compararWebYCelSinJava (String nombre){
+		boolean estaEnWeb = desarrolladoresWeb.contains(nombre);
+		boolean estaEnJava = desarrolladoresJava.contains(nombre);
+		boolean estaEnCelular = desarrolladoresCelular.contains(nombre);
+
+		if ((estaEnCelular)&&(estaEnWeb)&&(estaEnJava)!){
+			return true;
+		}
+		return false;
+	}
+}
