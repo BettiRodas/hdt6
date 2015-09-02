@@ -4,6 +4,9 @@ import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 import java.util.Scanner;//Aqui se importa el scanner
 public class main {
@@ -117,6 +120,7 @@ public class main {
                  int mayor =conjuntoMayor();
                  if (mayor ==0){
                     System.out.println("El conjunto mas grande es el de desarrolladores de Java"); 
+                    
                  }
                   if (mayor ==1){
                     System.out.println("El conjunto mas grande es el de desarrolladores de Web"); 
