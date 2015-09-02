@@ -8,13 +8,7 @@ Hoja de trabajo 6
 LinkedHashSet es una clase que crea tres conjuntos con LinkedHashSet para guardar los tipos de desarrolladores
 
 */
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package hashs;
+package hdt;
 
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -65,8 +59,7 @@ public class LinkedHashSets {
 		return (estaEnJava)&&(!estaEnWeb);
 	}
 
-	public boolean compararWebYCelSinJava (String nombre){ //Desarrolladores con experiencia en Web y Celulares pero que no tengan experiencia 
-en java
+	public boolean compararWebYCelSinJava (String nombre){ //Desarrolladores con experiencia en Web y Celulares pero que no tengan experiencia en java
 		boolean estaEnWeb = desarrolladoresWeb.contains(nombre);
 		boolean estaEnJava = desarrolladoresJava.contains(nombre);
 		boolean estaEnCelular = desarrolladoresCelular.contains(nombre);
@@ -74,8 +67,7 @@ en java
 		return (estaEnCelular)&&(estaEnWeb)&&(!estaEnJava);
 	}
 	
-	public boolean compararWebOCelSinJava(String nombre){ //Desarrolladores con experiencia en Web o Celulares pero que no tengan experiencia 
-en java
+	public boolean compararWebOCelSinJava(String nombre){ //Desarrolladores con experiencia en Web o Celulares pero que no tengan experiencia en java
 		boolean estaEnWeb = desarrolladoresWeb.contains(nombre);
 		boolean estaEnJava = desarrolladoresJava.contains(nombre);
 		boolean estaEnCelular = desarrolladoresCelular.contains(nombre);
@@ -112,4 +104,4 @@ en java
 			return 2;
 		}
 	}
-}
+} 
