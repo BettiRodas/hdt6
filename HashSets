@@ -1,23 +1,32 @@
-/**/
+/*
+Cecilia Marsicovetere 	14112
+Betti Rodas		14204
+
+31 de agosto de 2015
+
+HashSets es una clase que crea tres conjuntos con hashsets para guardar los tipos de desarrolladores
+
+*/
 package hashs;
 
 import java.util.HashSet;
+import java.util.Set;
 
 /**
  *
  * @author Betti
  */
  
-public class HashSets {  
+public class HashSets implements Set {  
 	//atributos
     HashSet<String> desarrolladoresJava, desarrolladoresWeb, desarrolladoresCelular;
            
     
     public HashSets(){ //constructor
        //se crean tres objetos HashSet uno para cada tipo de desarrollador
-        desarrolladoresJava= new HashSet<>();
-        desarrolladoresWeb= new HashSet<>();
-        desarrolladoresCelular= new HashSet<>();
+        desarrolladoresJava= new HashSet<String>();
+        desarrolladoresWeb= new HashSet<String>();
+        desarrolladoresCelular= new HashSet<String>();
     }   
     
     //Se agrega a el hash el nombre del desarrollador a el hash correspondiente
@@ -80,7 +89,7 @@ public class HashSets {
 		return true;
 	}
 	
-		public int conjuntoMayor (){
+	public int conjuntoMayor (){
 		int tamanoJava = desarrolladoresJava.size();
 		int tamanoWeb = desarrolladoresWeb.size();
 		int tamanoCelular = desarrolladoresCelular.size();
