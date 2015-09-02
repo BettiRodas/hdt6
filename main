@@ -20,126 +20,128 @@ public class main<T> {
         System.out.println("2. TreeSet");											//opcion2
         System.out.println("3. LinkedHashSet"); 
         int opcion=teclado.nextInt(); 
-        if (opcion==1){
-            HashSets desarollas = new HashSets();
-        }
-        if (opcion==2){
-            DesarolladoresTreeSet desarollas = new DesarolladoresTreeSet();
-        }
-        if (opcion==3){
-            LinkedHashSets desarollas = new LinkedHashSets();
-        }
+               /* if (opcion==1){
+                    HashSets desarollas = new HashSets();
+                }
+                if (opcion==2){
+                    DesarolladoresTreeSet desarollas = new DesarolladoresTreeSet();
+                }
+                if (opcion==3){
+                    LinkedHashSets desarollas = new LinkedHashSets();
+                }*/
+        factory(opcion);
    
         int menu=0;
         while(menu<3){
-        System.out.println("Ingrese la opcione que desee.");//se da la bienvenida
-        System.out.println("1. Ingresar un desarrollador.");											//opcion1
-        System.out.println("2. Desplegar informacion");											//opcion2
-        System.out.println("3. Salir"); 
-        menu=teclado.nextInt(); 
-        int contador = 0;
-        if (menu==1){
-            System.out.println("Ingrese el nombre del desarrollador.");		
-            String nombre =teclado.nextLine(); 
-            System.out.println("Pulse 1 si es cierto:");
-            boolean esJava=false, esWeb=false, esCel=false;
-            System.out.println("Es desarrollador de Java.");
-            int siNo = teclado.nextInt();
-            if (siNo==1){
-                esJava = true;
+            System.out.println("Ingrese la opcione que desee.");//se da la bienvenida
+            System.out.println("1. Ingresar un desarrollador.");											//opcion1
+            System.out.println("2. Desplegar informacion");											//opcion2
+            System.out.println("3. Salir"); 
+            menu=teclado.nextInt(); 
+            int contador = 0;
+            if (menu==1){
+                System.out.println("Ingrese el nombre del desarrollador.");		
+                String nombre =teclado.nextLine(); 
+                System.out.println("Pulse 1 si es cierto:");
+                boolean esJava=false, esWeb=false, esCel=false;
+                System.out.println("Es desarrollador de Java.");
+                int siNo = teclado.nextInt();
+                if (siNo==1){
+                    esJava = true;
+                }
+                System.out.println("Es desarrollador de Web.");
+                siNo = teclado.nextInt();
+                if (siNo==1){
+                    esWeb = true;
+                }
+                System.out.println("Es desarrollador de Celular.");
+                siNo = teclado.nextInt();
+                if (siNo==1){
+                    esCel = true;
+                }
+                desarrolladores[contador]=nombre;
+                desarollas.agregar(nombre, esWeb, esJava, esCel);
+                contador ++;
             }
-            System.out.println("Es desarrollador de Web.");
-            siNo = teclado.nextInt();
-            if (siNo==1){
-                esWeb = true;
-            }
-            System.out.println("Es desarrollador de Celular.");
-            siNo = teclado.nextInt();
-            if (siNo==1){
-                esCel = true;
-            }
-            desarrolladores[contador]=nombre;
-            desarollas.agregar(nombre, esWeb, esJava, esCel);
-            contador ++;
-        }
-        if (menu==2) {
-             System.out.println("A continuacion, los nombre de los desarrolladores con experiencia en Java, web y celulares.");	
-             for (int i=0;i<=contador;i++){
-                String desarollo = desarrolladores[i];
-                boolean seCumple= desarollas.compararTresConjuntos(desarollo);
-                if (seCumple){
-                    System.out.println(desarollo); 
-                }
-                
-             }
-             System.out.println();
-             System.out.println("Desarrolladores con experiencia en Java pero que no tengan experiencia en web"); 
-             for (int i=0;i<=contador;i++){
-                String desarollo = desarrolladores[i];
-                boolean seCumple= desarollas.compararJavaSinWeb(desarollo);
-                if (seCumple){
-                    System.out.println(desarollo); 
-                }
-                
-             }
-             System.out.println();
-             System.out.println("Desarrolladores con experiencia en Web y Celular pero sin experiencia en java."); 
-             for (int i=0;i<=contador;i++){
-                String desarollo = desarrolladores[i];
-                boolean seCumple= desarollas.compararWebYCelSinJava(desarollo);
-                if (seCumple){
-                    System.out.println(desarollo); 
-                }
-                
-             }
-             System.out.println();
-             System.out.println("Desarrolladores con experiencia en Web o Celular pero sin experiencia en java."); 
-             for (int i=0;i<=contador;i++){
-                String desarollo = desarrolladores[i];
-                boolean seCumple= desarollas.compararWebOCelSinJava(desarollo);
-                if (seCumple){
-                    System.out.println(desarollo); 
-                }
-                
-             }
-             System.out.println();
-             boolean conjunto = desarollas.javaEsSubconjuntoDeWeb();
-             if (conjunto){
-                System.out.println("Los desarroladores de java son un subconjunto de los desarrolladores de web."); 
-             }
-             else{
-                System.out.println("Los desarroladores de java no son un subconjunto de los desarrolladores de web."); 
-             }
-             System.out.println();
-             int mayor =conjuntoMayor();
-             if (mayor ==0){
-                System.out.println("El conjunto mas grande es el de desarrolladores de Java"); 
-             }
-              if (mayor ==1){
-                System.out.println("El conjunto mas grande es el de desarrolladores de Web"); 
-             }
-              if (mayor ==2){
-                System.out.println("El conjunto mas grande es el de desarrolladores de Celulares"); 
-             }
-             }
-
-        
-        }
+            if (menu==2) {
+                 System.out.println("A continuacion, los nombre de los desarrolladores con experiencia en Java, web y celulares.");	
+                 for (int i=0;i<=contador;i++){
+                    String desarollo = desarrolladores[i];
+                    boolean seCumple= desarollas.compararTresConjuntos(desarollo);
+                    if (seCumple){
+                        System.out.println(desarollo); 
+                    }
+                    
+                 }
+                 System.out.println();
+                 System.out.println("Desarrolladores con experiencia en Java pero que no tengan experiencia en web"); 
+                 for (int i=0;i<=contador;i++){
+                    String desarollo = desarrolladores[i];
+                    boolean seCumple= desarollas.compararJavaSinWeb(desarollo);
+                    if (seCumple){
+                        System.out.println(desarollo); 
+                    }
+                    
+                 }
+                 System.out.println();
+                 System.out.println("Desarrolladores con experiencia en Web y Celular pero sin experiencia en java."); 
+                 for (int i=0;i<=contador;i++){
+                    String desarollo = desarrolladores[i];
+                    boolean seCumple= desarollas.compararWebYCelSinJava(desarollo);
+                    if (seCumple){
+                        System.out.println(desarollo); 
+                    }
+                    
+                 }
+                 System.out.println();
+                 System.out.println("Desarrolladores con experiencia en Web o Celular pero sin experiencia en java."); 
+                 for (int i=0;i<=contador;i++){
+                    String desarollo = desarrolladores[i];
+                    boolean seCumple= desarollas.compararWebOCelSinJava(desarollo);
+                    if (seCumple){
+                        System.out.println(desarollo); 
+                    }
+                    
+                 }
+                 System.out.println();
+                 boolean conjunto = desarollas.javaEsSubconjuntoDeWeb();
+                 if (conjunto){
+                    System.out.println("Los desarroladores de java son un subconjunto de los desarrolladores de web."); 
+                 }
+                 else{
+                    System.out.println("Los desarroladores de java no son un subconjunto de los desarrolladores de web."); 
+                 }
+                 System.out.println();
+                 int mayor =conjuntoMayor();
+                 if (mayor ==0){
+                    System.out.println("El conjunto mas grande es el de desarrolladores de Java"); 
+                 }
+                  if (mayor ==1){
+                    System.out.println("El conjunto mas grande es el de desarrolladores de Web"); 
+                 }
+                  if (mayor ==2){
+                    System.out.println("El conjunto mas grande es el de desarrolladores de Celulares"); 
+                 }
+                 }
+    
             
         }
+            
     }
+    
   
-    /*
-    public T factory(int numero){
+    
+    public Set factory(int numero){
         if (numero==0){
-            return (T) new HashSets();
+            return new HashSets();
         }
          if (numero==1){
-            return (T) new DesarolladoresTreeSet();
+            return new DesarolladoresTreeSet();
         }
          
          if (numero==2){
-            return (T) new LinkedHashSets();
+            return new LinkedHashSets();
         }
-    }*/
+    }
+    }
     
