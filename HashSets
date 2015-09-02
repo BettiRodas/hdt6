@@ -80,24 +80,17 @@ public class HashSets {
 		return true;
 	}
 	
-	public String conjuntoMayor(HashSet<> desarrolladoresJava, HashSet<> desarrolladoresWeb, HashSet<> desarrolladoresCelular){ //El  conjunto que  tenga  la  cantidad  más  grande  de  desarrolladores
-		int desarrolladoresEnJava = desarrolladoresJava.size();
-		int desarrolladoresEnWeb = desarrolladoresWeb.size();
-		int desarrolladoresEnCelular = desarrolladoresCelular.size();
-		String mayor;
-		
-		if(((desarrolladoresEnJava) > (desarrolladoresEnWeb)) && ((desarrolladoresEnWeb) > (desarrolladoresEnCelular))){
-			mayor = desarrolladoresJava;
-			return mayor;	
+		public int conjuntoMayor (){
+		int tamanoJava = desarrolladoresJava.size();
+		int tamanoWeb = desarrolladoresWeb.size();
+		int tamanoCelular = desarrolladoresCelular.size();
+		if ((tamanoWeb<tamanoJava)&&(tamanoCelular<tamanoJava)){
+			return 0;
 		}
-		
-		if(((desarrolladoresEnWeb) > (desarrolladoresEnJava)) && ((desarrolladoresEnWeb) < (desarrolladoresEnCelular))){
-			mayor = desarrolladoresEnWeb;
-			return mayor;
+		if ((tamanoJava<tamanoWeb)&&(tamanoCelular<tamanoWeb)){
+			return 1;
 		}
-				
-		if(((desarrolladoresEnCelular) > (desarrolladoresEnWeb)) && ((desarrolladoresEnCelular) < (desarrolladoresEnJava)){
-			mayor = desarrolladoresEnCelular;
-			return mayor;	
+		if ((tamanoJava<tamanoCelular)&&(tamanoWeb<tamanoCelular)){
+			return 2;
 		}
 	}
