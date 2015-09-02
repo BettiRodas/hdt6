@@ -6,7 +6,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import java.util.Scanner;//Aqui se importa el scanner
-public class main<T> {
+public class main {
 
     /**
      * @param args the command line arguments
@@ -29,7 +29,7 @@ public class main<T> {
                 if (opcion==3){
                     LinkedHashSets desarollas = new LinkedHashSets();
                 }*/
-        factory(opcion);
+        Set conjunto=factory(opcion);
    
         int menu=0;
         while(menu<3){
@@ -60,14 +60,16 @@ public class main<T> {
                     esCel = true;
                 }
                 desarrolladores[contador]=nombre;
-                desarollas.agregar(nombre, esWeb, esJava, esCel);
+                conjunto.agregar(nombre, esWeb, esJava, esCel);
                 contador ++;
             }
             if (menu==2) {
+                boolean seCumple;
+                String desarollo;
                  System.out.println("A continuacion, los nombre de los desarrolladores con experiencia en Java, web y celulares.");	
                  for (int i=0;i<=contador;i++){
-                    String desarollo = desarrolladores[i];
-                    boolean seCumple= desarollas.compararTresConjuntos(desarollo);
+                    desarollo = desarrolladores[i];
+                    seCumple= conjunto.compararTresConjuntos(desarollo);
                     if (seCumple){
                         System.out.println(desarollo); 
                     }
@@ -76,8 +78,8 @@ public class main<T> {
                  System.out.println();
                  System.out.println("Desarrolladores con experiencia en Java pero que no tengan experiencia en web"); 
                  for (int i=0;i<=contador;i++){
-                    String desarollo = desarrolladores[i];
-                    boolean seCumple= desarollas.compararJavaSinWeb(desarollo);
+                    desarollo = desarrolladores[i];
+                    seCumple= conjunto.compararJavaSinWeb(desarollo);
                     if (seCumple){
                         System.out.println(desarollo); 
                     }
@@ -86,8 +88,8 @@ public class main<T> {
                  System.out.println();
                  System.out.println("Desarrolladores con experiencia en Web y Celular pero sin experiencia en java."); 
                  for (int i=0;i<=contador;i++){
-                    String desarollo = desarrolladores[i];
-                    boolean seCumple= desarollas.compararWebYCelSinJava(desarollo);
+                    desarollo = desarrolladores[i];
+                    seCumple= conjunto.compararWebYCelSinJava(desarollo);
                     if (seCumple){
                         System.out.println(desarollo); 
                     }
@@ -96,16 +98,16 @@ public class main<T> {
                  System.out.println();
                  System.out.println("Desarrolladores con experiencia en Web o Celular pero sin experiencia en java."); 
                  for (int i=0;i<=contador;i++){
-                    String desarollo = desarrolladores[i];
-                    boolean seCumple= desarollas.compararWebOCelSinJava(desarollo);
+                    desarollo = desarrolladores[i];
+                    seCumple= conjunto.compararWebOCelSinJava(desarollo);
                     if (seCumple){
                         System.out.println(desarollo); 
                     }
                     
                  }
                  System.out.println();
-                 boolean conjunto = desarollas.javaEsSubconjuntoDeWeb();
-                 if (conjunto){
+                 boolean conjuntos = conjunto.javaEsSubconjuntoDeWeb();
+                 if (conjuntos){
                     System.out.println("Los desarroladores de java son un subconjunto de los desarrolladores de web."); 
                  }
                  else{
