@@ -1,4 +1,15 @@
 /*
+Cecilia Marsicovetere 	14112
+Betti Rodas		14204
+
+31 de agosto de 2015
+Hoja de trabajo 6
+
+LinkedHashSet es una clase que crea tres conjuntos con LinkedHashSet para guardar los tipos de desarrolladores
+
+*/
+
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -18,9 +29,9 @@ public class LinkedHashSets {
            
     public LinkedHashSets(){
        //se crean los objetos LinkedHashSet
-        desarrolladoresJava= new LinkedHashSet<>;
-        desarrolladoresWeb= new LinkedHashSet<>;
-        desarrolladoresCelular= new LinkedHashSet<>;
+        desarrolladoresJava= new LinkedHashSet<String>();
+        desarrolladoresWeb= new LinkedHashSet<String>();
+        desarrolladoresCelular= new LinkedHashSet<String>();
     }   
     
     //Se agrega a el hash el nombre del desarrollador a el hash correspondiente
@@ -101,3 +112,4 @@ en java
 			return 2;
 		}
 	}
+}
