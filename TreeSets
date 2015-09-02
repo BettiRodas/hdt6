@@ -1,5 +1,14 @@
-import java.util.TreeSet;
+/*
+Cecilia Marsicovetere 	14112
+Betti Rodas		14204
 
+31 de agosto de 2015
+
+TreeSets es una clase que crea tres conjuntos con treesets para guardar los tipos de desarrolladores
+
+*/
+
+import java.util.TreeSet;
 import java.util.Set;
 
 //Importamos la libreria de treeset y set
