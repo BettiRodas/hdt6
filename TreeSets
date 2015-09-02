@@ -4,10 +4,10 @@ import java.util.Set;
 
 //Importamos la libreria de treeset y set
 
-public class TreeSets extends Set {							
+public class TreeSets implements Set {							
     TreeSet<String> desarrolladoresWeb, desarrolladoresJava, desarrolladoresCelular;	//Se crean tres objetos de tipo treeset. Cada uno representa un conjunto de desarrolladores de cierto tipo (web, java o celular)
 
-	public DesarolladoresTreeSet(){ 						//crea cada conjunto, que va a tener objetos tipo string (el nombre del desarrollador)
+	public TreeSets(){ 						//crea cada conjunto, que va a tener objetos tipo string (el nombre del desarrollador)
 		 desarrolladoresWeb = new TreeSet<String>();
 		 desarrolladoresJava = new TreeSet<String>();
 		 desarrolladoresCelular = new TreeSet<String>();
@@ -50,7 +50,7 @@ public class TreeSets extends Set {
 		return (estaEnCelular)&&(estaEnWeb)&&(!estaEnJava);    			//debe estar en celular y en la web y NO en java
 	}
 	
-	public boolean compararWebOCelSinJava (String nombre){
+	public boolean compararWebOCelSinJava (String nombre){ 				//Si esta en celular o web, y NO java, regresa verdadero
 		boolean estaEnWeb = desarrolladoresWeb.contains(nombre);
 		boolean estaEnJava = desarrolladoresJava.contains(nombre);
 		boolean estaEnCelular = desarrolladoresCelular.contains(nombre);
@@ -58,18 +58,18 @@ public class TreeSets extends Set {
 		return (estaEnCelular)||(estaEnWeb)&&(!estaEnJava);
 	}
 
-	public boolean javaEsSubconjuntoDeWeb (){
+	public boolean javaEsSubconjuntoDeWeb (){	 			
 		int contador =0;
 		int tamano = desarrolladoresJava.size();
 		TreeSet<String> temporal = desarrolladoresJava;
 		while (contador<tamano){
-			boolean loContiene = desarrolladoresWeb.contains(temporal.pollLast());
+			boolean loContiene = desarrolladoresWeb.contains(temporal.pollLast());	//revisa si tiene el mismo string
 			if (!loContiene){
-				return false;
+				return false; 							//con que solo uno falle, NO es subconjuntp
 			}
 			contador ++;
 		}
-		return true;
+		return true; 									//si todos sus elementos estan dentro de web, es un subconjunto
 	}
 
 
@@ -77,13 +77,13 @@ public class TreeSets extends Set {
 		int tamanoJava = desarrolladoresJava.size();
 		int tamanoWeb = desarrolladoresWeb.size();
 		int tamanoCelular = desarrolladoresCelular.size();
-		if ((tamanoWeb<tamanoJava)&&(tamanoCelular<tamanoJava)){
+		if ((tamanoWeb<tamanoJava)&&(tamanoCelular<tamanoJava)){    //si Java es el mas grande, regresa 0
 			return 0;
 		}
-		if ((tamanoJava<tamanoWeb)&&(tamanoCelular<tamanoWeb)){
+		if ((tamanoJava<tamanoWeb)&&(tamanoCelular<tamanoWeb)){     //si Web es el mas grande, regresa 1
 			return 1;
 		}
-		if ((tamanoJava<tamanoCelular)&&(tamanoWeb<tamanoCelular)){
+		if ((tamanoJava<tamanoCelular)&&(tamanoWeb<tamanoCelular)){   //si Celular es el mas grande, regresa 2
 			return 2;
 		}
 	}
