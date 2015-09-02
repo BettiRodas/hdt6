@@ -1,6 +1,10 @@
-import java.util.TreeSet;								//Importamos la libreria de treeset
+import java.util.TreeSet;
 
-public class DesarolladoresTreeSet {							
+import java.util.Set;
+
+//Importamos la libreria de treeset y set
+
+public class TreeSets extends Set {							
     TreeSet<String> desarrolladoresWeb, desarrolladoresJava, desarrolladoresCelular;	//Se crean tres objetos de tipo treeset. Cada uno representa un conjunto de desarrolladores de cierto tipo (web, java o celular)
 
 	public DesarolladoresTreeSet(){ 						//crea cada conjunto, que va a tener objetos tipo string (el nombre del desarrollador)
@@ -69,7 +73,7 @@ public class DesarolladoresTreeSet {
 	}
 
 
-	public int conjuntoMayor (String nombre){
+	public int conjuntoMayor (){
 		int tamanoJava = desarrolladoresJava.size();
 		int tamanoWeb = desarrolladoresWeb.size();
 		int tamanoCelular = desarrolladoresCelular.size();
